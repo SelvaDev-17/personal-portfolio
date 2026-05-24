@@ -88,6 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.animation = `fadeUp 0.8s ease-out forwards ${index * 0.2}s`;
     });
 
+    // Global Mouse Tracking Spotlight
+    document.addEventListener('mousemove', e => {
+        document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+        document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+    });
+
     // Card Glow Effect (Mouse tracking)
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('mousemove', e => {
