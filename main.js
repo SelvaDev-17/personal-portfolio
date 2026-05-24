@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     console.log('Portfolio script loaded successfully.');
 
     // Mobile Navigation Toggle (Placeholder for now)
@@ -76,7 +76,7 @@
     }, observerOptions);
 
     // Fade-up elements
-    document.querySelectorAll('section, h2, .project-card, .timeline-item').forEach(el => {
+    document.querySelectorAll('section, .brutalist-title-wrapper, .project-card, .timeline-item').forEach(el => {
         el.classList.add('hidden-section');
         observer.observe(el);
     });

@@ -9,7 +9,7 @@
         content="Portfolio of selva kumar, a Web Developer specializing in modern, minimalist, and high-impact web solutions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Caveat:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -37,8 +37,11 @@
         <section id="hero">
             <div class="container hero-grid">
                 <div class="hero-content">
-                    <span class="eyebrow">Hi, I'm SELVA KUMAR</span>
-                    <h1>Creating websites that grow <span class="text-accent">BUSINESSES</span>.</h1>
+                    <div class="brutalist-title-wrapper eyebrow-brutalist">
+                        <span class="brutalist-title-bg">HELLO I'M</span>
+                        <span class="brutalist-title-fg">Selva Kumar</span>
+                    </div>
+                    <h1 class="hero-sub-title">Creating websites that grow <span class="text-accent">BUSINESSES</span>.</h1>
                     <p class="lead">Web Developer crafting high-quality, accessible web experiences that drive results.
                     </p>
                     <div class="cta-group">
@@ -57,9 +60,27 @@
                     </div>
                 </div>
                 <div class="hero-image-container">
-                    <div class="hero-ring ring-1"></div>
-                    <div class="hero-ring ring-2"></div>
-                    <img src="WhatsApp Image 2026-02-04 at 10.42.19 AM.jpeg" alt="Selva Kumar" class="hero-img">
+                    <div class="sticker-wrapper">
+                        <div class="sticker-outline-effect"></div>
+                        <img src="WhatsApp Image 2026-02-04 at 10.42.19 AM.jpeg" alt="Selva Kumar" class="sticker-img">
+                        <!-- Orbiting sketches -->
+                        <div class="orbit-sketch sketch-star">⭐</div>
+                        <div class="orbit-sketch sketch-nib">✒️</div>
+                        <div class="orbit-sketch sketch-sparkle">✨</div>
+                    </div>
+                    
+                    <!-- Squiggly Arrow SVG Decoration -->
+                    <div class="decoration-arrow">
+                        <svg viewBox="0 0 150 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15,15 Q65,5 115,55" stroke="var(--color-neon-pink)" stroke-dasharray="6,6" stroke-width="3" fill="none"/>
+                            <path d="M115,55 L100,50 M115,55 L110,40" stroke="var(--color-neon-pink)" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="decoration-loop-left">
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10,80 Q40,30 70,80 T100,80" stroke="var(--color-neon-pink)" stroke-width="4" fill="none"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </section>
@@ -67,10 +88,13 @@
         <!-- About Section -->
         <section id="about">
             <div class="container">
-                <h2 class="section-title">About Me</h2>
+                <div class="brutalist-title-wrapper section-header">
+                    <span class="brutalist-title-bg">ABOUT ME</span>
+                    <span class="brutalist-title-fg">Selva Kumar</span>
+                </div>
                 <div class="about-grid">
                     <div class="about-text">
-                        <p>I'm a Web Developer who helps startups turn ideas into fast, scalable, and user-focused
+                        <p>I’m a Web Developer who helps startups turn ideas into fast, scalable, and user-focused
                             products. I work at the intersection of engineering and product, building clean, accessible
                             web experiences that are designed to ship quickly and scale confidently. </p>
                         <p>I enjoy working with early-stage teams, iterating fast, and building products that users
@@ -96,7 +120,10 @@
         <!-- Projects Section -->
         <section id="projects">
             <div class="container">
-                <h2 class="section-title">PROJECTS</h2>
+                <div class="brutalist-title-wrapper section-header">
+                    <span class="brutalist-title-bg">PORTFOLIO</span>
+                    <span class="brutalist-title-fg">Selected Work</span>
+                </div>
                 <div class="projects-grid">
                     <article class="project-card">
                         <div class="project-content">
@@ -165,7 +192,10 @@
         <!-- Experience Section -->
         <section id="experience">
             <div class="container">
-                <h2 class="section-title">Experience</h2>
+                <div class="brutalist-title-wrapper section-header">
+                    <span class="brutalist-title-bg">EXPERIENCE</span>
+                    <span class="brutalist-title-fg">My Journey</span>
+                </div>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-date">2024 - previous</div>
@@ -203,7 +233,10 @@
         <section id="contact">
             <div class="container contact-wrapper">
                 <div class="contact-content">
-                    <h2 class="section-title">Let's Work Together</h2>
+                    <div class="brutalist-title-wrapper section-header text-left-brutalist">
+                        <span class="brutalist-title-bg">LET'S CONNECT</span>
+                        <span class="brutalist-title-fg">Work Together</span>
+                    </div>
                     <p>Have a project in mind or just want to say hi? I'd love to hear from you.</p>
                     <a href="mailto:selvakumarsrinivasan17@gmail.com"
                         class="email-link">selvakumarsrinivasan17@gmail.com</a>
@@ -258,6 +291,17 @@
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>
+        </section>
+        
+        <!-- Thank You Section -->
+        <section id="thank-you" class="thank-you-section">
+            <div class="brutalist-title-wrapper thank-you-header">
+                <span class="brutalist-title-bg">THANK YOU</span>
+                <span class="brutalist-title-fg">For Attention</span>
+            </div>
+            
+            <!-- Ripped paper visual footer line -->
+            <div class="ripped-paper-line"></div>
         </section>
     </main>
 
