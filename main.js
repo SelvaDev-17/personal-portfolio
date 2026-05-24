@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     // Fade-up elements
-    document.querySelectorAll('section, h2, .project-card, .timeline-item').forEach(el => {
+    document.querySelectorAll('section, .brutalist-title-wrapper, .project-card, .timeline-item').forEach(el => {
         el.classList.add('hidden-section');
         observer.observe(el);
     });
