@@ -106,6 +106,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // 3D Tilt Effect for Profile Sticker Wrapper
+    const stickerWrapper = document.querySelector('.sticker-wrapper');
+    if (stickerWrapper) {
+        stickerWrapper.addEventListener('mousemove', e => {
+            const rect = stickerWrapper.getBoundingClientRect();
+            // Calculate cursor coordinates relative to wrapper center
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            // Calculate tilt angle (max 12 degrees)
+            const rotateX = -(y / (rect.height / 2)) * 12;
+            const rotateY = (x / (rect.width / 2)) * 12;
+            
+            stickerWrapper.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.04, 1.04, 1.04)`;
+        });
+
+        stickerWrapper.addEventListener('mouseleave', () => {
+            // Restore original state
+            stickerWrapper.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        });
+    }
+
     // Form Submission Handler
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {

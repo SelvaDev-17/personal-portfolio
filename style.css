@@ -49,10 +49,10 @@
     }
 }
 
-@keyframes sketch-wobble {
-    0% { transform: rotate(-3deg) translate(0, 0); }
-    50% { transform: rotate(-2deg) translate(1px, -1px); }
-    100% { transform: rotate(-3.5deg) translate(-1px, 1px); }
+@keyframes sticker-float {
+    0% { transform: translateY(0px) rotate(-3deg); }
+    50% { transform: translateY(-10px) rotate(-1deg); }
+    100% { transform: translateY(0px) rotate(-3deg); }
 }
 
 @keyframes float-sketch {
@@ -229,15 +229,15 @@ section {
 }
 
 .btn-primary {
-    background-color: var(--color-accent);
-    color: #06040d;
-    box-shadow: 0 0 15px rgba(0, 255, 102, 0.35);
+    background-color: var(--color-neon-pink);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.45);
 }
 
 .btn-primary:hover {
-    background-color: var(--color-accent-hover);
+    background-color: #ff1a8c;
     transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(0, 255, 102, 0.65);
+    box-shadow: 0 0 30px rgba(255, 0, 127, 0.8);
 }
 
 .btn-secondary {
@@ -247,11 +247,11 @@ section {
 }
 
 .btn-secondary:hover {
-    border-color: var(--color-neon-pink);
-    color: var(--color-neon-pink);
-    background-color: rgba(255, 0, 127, 0.05);
+    border-color: var(--color-neon-cyan);
+    color: var(--color-neon-cyan);
+    background-color: rgba(0, 240, 255, 0.05);
     transform: translateY(-2px);
-    box-shadow: 0 0 15px rgba(255, 0, 127, 0.25);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.45);
 }
 
 /* Header & Nav */
@@ -434,18 +434,22 @@ header .container {
     padding: 12px;
     background-color: #ffffff;
     border: 5px solid #000000;
-    box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.8),
+                -8px -8px 25px rgba(0, 240, 255, 0.2),
+                8px 8px 25px rgba(255, 0, 127, 0.2);
     transform: rotate(-3deg);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    animation: sketch-wobble 0.22s infinite alternate steps(2);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    animation: sticker-float 6s ease-in-out infinite;
     max-width: 320px;
     z-index: 2;
 }
 
 .sticker-wrapper:hover {
-    transform: scale(1.05) rotate(1deg);
-    box-shadow: 16px 16px 0px var(--color-neon-pink);
-    animation-play-state: paused;
+    box-shadow: 16px 16px 0px var(--color-neon-pink),
+                -12px -12px 35px rgba(0, 240, 255, 0.45),
+                12px 12px 35px rgba(255, 0, 127, 0.45);
 }
 
 .sticker-img {
@@ -454,6 +458,8 @@ header .container {
     display: block;
     border: 3px solid #000000;
     background-color: var(--color-bg);
+    transform: translateZ(20px);
+    transition: transform 0.15s ease-out;
 }
 
 .orbit-sketch {
@@ -985,18 +991,43 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .brutalist-title-bg {
+        font-size: clamp(1.8rem, 8vw, 2.6rem) !important;
+        letter-spacing: -1px;
+    }
+
+    .brutalist-title-fg {
+        font-size: clamp(1.4rem, 6vw, 2rem) !important;
+        bottom: -8px;
+        right: -8px;
+    }
+
+    .hero-sub-title {
+        font-size: clamp(1.4rem, 6vw, 1.85rem) !important;
+    }
+
     .lead {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .btn {
         width: 100%;
-        padding: 0.6rem 1.25rem;
+        padding: 0.7rem 1.25rem;
     }
 
     .cta-group {
         flex-direction: column;
         width: 100%;
+        gap: var(--spacing-sm);
+    }
+
+    .sticker-wrapper {
+        max-width: 85%;
+        padding: 8px;
+        border-width: 4px;
+        box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.8),
+                    -4px -4px 15px rgba(0, 240, 255, 0.2),
+                    4px 4px 15px rgba(255, 0, 127, 0.2);
     }
 
     .project-card {
