@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     console.log('Portfolio script loaded successfully.');
 
-    // Mobile Navigation Toggle
+    // Mobile Navigation Toggle (Placeholder for now)
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navLinks = document.querySelector('.nav-links');
 
@@ -60,9 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Scroll Reveal Animation (Intersection Observer)
+    // Scroll Reveal Animation
     const observerOptions = {
-        threshold: 0.1,
+        threshold: 0.15,
         rootMargin: "0px 0px -50px 0px" // Trigger slightly before element is in view
     };
 
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     // Fade-up elements
-    document.querySelectorAll('section, .brutalist-title-wrapper, .project-card, .timeline-item').forEach(el => {
+    document.querySelectorAll('section, h2, .project-card, .timeline-item').forEach(el => {
         el.classList.add('hidden-section');
         observer.observe(el);
     });
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroElements = document.querySelectorAll('.hero-content > *');
     heroElements.forEach((el, index) => {
         el.style.opacity = '0';
-        el.style.animation = `fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards ${index * 0.15}s`;
+        el.style.animation = `fadeUp 0.8s ease-out forwards ${index * 0.2}s`;
     });
 
     // Global Mouse Tracking Spotlight
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
     });
 
-    // Card Glow Effect (Mouse tracking relative to card)
+    // Card Glow Effect (Mouse tracking)
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('mousemove', e => {
             const rect = card.getBoundingClientRect();
@@ -106,63 +106,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Scroll Effects (Scroll Progress Indicator & Parallax Blobs)
-    const scrollProgress = document.querySelector('.scroll-progress');
-    const parallaxBlobs = document.querySelectorAll('.parallax-blob');
-
-    function handleScrollEffects() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-
-        // 1. Update Scroll Progress Bar
-        if (scrollProgress && docHeight > 0) {
-            const progress = (scrollTop / docHeight) * 100;
-            scrollProgress.style.width = `${progress}%`;
-        }
-
-        // 2. Parallax Scrolling for Blobs
-        parallaxBlobs.forEach(blob => {
-            const speed = parseFloat(blob.getAttribute('data-speed')) || 0.1;
-            const yOffset = scrollTop * speed;
-            blob.style.transform = `translate3d(0, ${yOffset}px, 0)`;
-        });
-    }
-
-    // Bind scroll listener with requestAnimationFrame for performance optimization
-    let tick = false;
-    window.addEventListener('scroll', () => {
-        if (!tick) {
-            window.requestAnimationFrame(() => {
-                handleScrollEffects();
-                tick = false;
-            });
-            tick = true;
-        }
-    });
-
-    // Run once on load to initialize correct positioning
-    handleScrollEffects();
-
     // Form Submission Handler
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            // Basic feedback
             const btn = contactForm.querySelector('button[type="submit"]');
             const originalText = btn.textContent;
 
             btn.textContent = 'Message Sent!';
-            btn.style.backgroundColor = '#00ff66'; // Emerald
-            btn.style.color = '#080b10';
+            btn.style.backgroundColor = '#10B981'; // Green
 
             setTimeout(() => {
                 contactForm.reset();
                 btn.textContent = originalText;
                 btn.style.backgroundColor = '';
-                btn.style.color = '';
             }, 3000);
 
-            console.log('Form submitted successfully');
+            console.log('Form submitted');
         });
     }
 });
