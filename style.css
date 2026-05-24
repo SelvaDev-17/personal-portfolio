@@ -1,5 +1,5 @@
 :root {
-    /* Y2K Graphic Designer Cyber Pink Palette */
+    /* Y2K Graphic Designer Cyber Orange Palette */
     --color-bg: #0a0a0c;
     --color-surface: rgba(20, 20, 25, 0.65);
     --color-surface-hover: rgba(30, 30, 38, 0.9);
@@ -7,12 +7,12 @@
     --color-text-secondary: #a3a1bc;
     
     /* Neon Accents */
-    --color-neon-pink: #ff007f;
+    --color-neon-orange: #ff5900; /* Vibrant Masculine Cyber Orange */
     --color-neon-cyan: #00f0ff;
     --color-neon-green: #39ff14;
     
-    --color-accent: var(--color-neon-pink);
-    --color-accent-hover: #ff3399;
+    --color-accent: var(--color-neon-orange);
+    --color-accent-hover: #ff7722;
     --color-border: rgba(255, 255, 255, 0.08);
     
     /* Paper Brutalism Contrast */
@@ -49,10 +49,16 @@
     }
 }
 
-@keyframes sketch-wobble {
-    0% { transform: rotate(-3deg) translate(0, 0); }
-    50% { transform: rotate(-2deg) translate(1px, -1px); }
-    100% { transform: rotate(-3.5deg) translate(-1px, 1px); }
+@keyframes sticker-float {
+    0% {
+        transform: rotate(-3deg) translateY(0px);
+    }
+    50% {
+        transform: rotate(-1deg) translateY(-14px) scale(1.015);
+    }
+    100% {
+        transform: rotate(-3deg) translateY(0px);
+    }
 }
 
 @keyframes float-sketch {
@@ -92,7 +98,7 @@ body {
     -webkit-font-smoothing: antialiased;
     /* Textured wavy grid background */
     background-image: 
-        radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 0, 127, 0.05) 0%, transparent 60%),
+        radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 89, 0, 0.05) 0%, transparent 60%),
         repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.003) 0px, rgba(255, 255, 255, 0.003) 2px, transparent 2px, transparent 10px),
         linear-gradient(rgba(255, 255, 255, 0.008) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.008) 1px, transparent 1px);
@@ -374,7 +380,7 @@ header .container {
 .brutalist-title-fg {
     font-family: var(--font-handwritten);
     font-size: clamp(2.2rem, 5vw, 3.8rem);
-    color: var(--color-neon-pink);
+    color: var(--color-neon-orange);
     position: absolute;
     bottom: -15px;
     right: -10px;
@@ -437,14 +443,14 @@ header .container {
     box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.35);
     transform: rotate(-3deg);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    animation: sketch-wobble 0.22s infinite alternate steps(2);
+    animation: sticker-float 6s ease-in-out infinite;
     max-width: 320px;
     z-index: 2;
 }
 
 .sticker-wrapper:hover {
-    transform: scale(1.05) rotate(1deg);
-    box-shadow: 16px 16px 0px var(--color-neon-pink);
+    transform: scale(1.05) rotate(2deg) translateY(-5px);
+    box-shadow: 16px 20px 0px var(--color-neon-orange);
     animation-play-state: paused;
 }
 
@@ -560,8 +566,8 @@ header .container {
 
 .skills-list li:hover {
     transform: translateY(-2px);
-    box-shadow: 5px 5px 0px var(--color-neon-pink);
-    background-color: var(--color-neon-pink);
+    box-shadow: 5px 5px 0px var(--color-neon-orange);
+    background-color: var(--color-neon-orange);
     color: #ffffff;
 }
 
@@ -588,8 +594,8 @@ header .container {
 
 .project-card:hover {
     transform: translateY(-6px) rotate(1deg);
-    border-color: var(--color-neon-pink);
-    box-shadow: 12px 12px 0px rgba(255, 0, 127, 0.3);
+    border-color: var(--color-neon-orange);
+    box-shadow: 12px 12px 0px rgba(255, 89, 0, 0.3);
 }
 
 .project-content {
@@ -633,7 +639,7 @@ header .container {
 }
 
 .tags li:hover {
-    background-color: var(--color-neon-pink);
+    background-color: var(--color-neon-orange);
     color: #ffffff;
     transform: translateY(-1px);
     box-shadow: 3px 3px 0px #000000;
@@ -641,7 +647,7 @@ header .container {
 
 .btn-link {
     font-weight: 700;
-    color: var(--color-neon-pink);
+    color: var(--color-neon-orange);
     display: inline-flex;
     align-items: center;
     margin-top: auto;
@@ -670,7 +676,7 @@ header .container {
     width: 4px;
     height: 100%;
     background-color: #000000;
-    border-left: 2px solid var(--color-neon-pink);
+    border-left: 2px solid var(--color-neon-orange);
 }
 
 .timeline-item {
@@ -686,7 +692,7 @@ header .container {
     top: 6px;
     width: 14px;
     height: 14px;
-    background-color: var(--color-neon-pink);
+    background-color: var(--color-neon-orange);
     border: 3px solid #000000;
     border-radius: 50%;
 }
@@ -710,8 +716,8 @@ header .container {
 
 .timeline-item:hover .timeline-content {
     transform: translateX(4px) rotate(0.5deg);
-    box-shadow: 8px 8px 0px var(--color-neon-pink);
-    border-color: var(--color-neon-pink);
+    box-shadow: 8px 8px 0px var(--color-neon-orange);
+    border-color: var(--color-neon-orange);
 }
 
 .timeline-content h3 {
@@ -772,8 +778,8 @@ header .container {
 }
 
 .contact-content .email-link:hover {
-    color: var(--color-neon-pink);
-    text-shadow: 0 0 10px rgba(255, 0, 127, 0.4);
+    color: var(--color-neon-orange);
+    text-shadow: 0 0 10px rgba(255, 89, 0, 0.4);
 }
 
 .social-links {
@@ -796,7 +802,7 @@ header .container {
 }
 
 .social-links a:hover {
-    background-color: var(--color-neon-pink);
+    background-color: var(--color-neon-orange);
     color: #fff;
     transform: translateY(-3px) rotate(-3deg);
     box-shadow: 5px 5px 0px #000000;
@@ -832,8 +838,8 @@ header .container {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--color-neon-pink);
-    box-shadow: 0 0 8px rgba(255, 0, 127, 0.25);
+    border-color: var(--color-neon-orange);
+    box-shadow: 0 0 8px rgba(255, 89, 0, 0.25);
 }
 
 /* Thank You Section */
