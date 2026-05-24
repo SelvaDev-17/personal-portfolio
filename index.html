@@ -9,12 +9,13 @@
         content="Portfolio of selva kumar, a Web Developer specializing in modern, minimalist, and high-impact web solutions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Caveat:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header id="header">
+        <div class="scroll-progress"></div>
         <nav class="container">
             <a href="#" class="logo">PORTFOLIO</a>
             <ul class="nav-links">
@@ -35,6 +36,8 @@
     <main>
         <!-- Hero Section -->
         <section id="hero">
+            <div class="parallax-blob blob-green hero-blob-1" data-speed="0.15"></div>
+            <div class="parallax-blob blob-orange hero-blob-2" data-speed="-0.1"></div>
             <div class="container hero-grid">
                 <div class="hero-content">
                     <div class="brutalist-title-wrapper eyebrow-brutalist">
@@ -60,26 +63,8 @@
                     </div>
                 </div>
                 <div class="hero-image-container">
-                    <div class="sticker-wrapper">
-                        <div class="sticker-outline-effect"></div>
-                        <img src="animated_profile.png" alt="Selva Kumar" class="sticker-img">
-                        <!-- Orbiting sketches (Developer theme: Lightning, Gear, Laptop) -->
-                        <div class="orbit-sketch sketch-star">⚡</div>
-                        <div class="orbit-sketch sketch-nib">⚙️</div>
-                        <div class="orbit-sketch sketch-sparkle">💻</div>
-                    </div>
-                    
-                    <!-- Squiggly Arrow SVG Decoration -->
-                    <div class="decoration-arrow">
-                        <svg viewBox="0 0 150 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15,15 Q65,5 115,55" stroke="var(--color-neon-orange)" stroke-dasharray="6,6" stroke-width="3" fill="none"/>
-                            <path d="M115,55 L100,50 M115,55 L110,40" stroke="var(--color-neon-orange)" stroke-width="3" fill="none"/>
-                        </svg>
-                    </div>
-                    <div class="decoration-loop-left">
-                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10,80 Q40,30 70,80 T100,80" stroke="var(--color-neon-orange)" stroke-width="4" fill="none"/>
-                        </svg>
+                    <div class="profile-avatar-wrapper">
+                        <img src="blended_profile.png" alt="Selva Kumar" class="profile-avatar-img">
                     </div>
                 </div>
             </div>
@@ -87,6 +72,7 @@
 
         <!-- About Section -->
         <section id="about">
+            <div class="parallax-blob blob-orange about-blob" data-speed="0.1"></div>
             <div class="container">
                 <div class="brutalist-title-wrapper section-header">
                     <span class="brutalist-title-bg">ABOUT ME</span>
@@ -119,6 +105,7 @@
 
         <!-- Projects Section -->
         <section id="projects">
+            <div class="parallax-blob blob-green projects-blob" data-speed="-0.12"></div>
             <div class="container">
                 <div class="brutalist-title-wrapper section-header">
                     <span class="brutalist-title-bg">PORTFOLIO</span>
@@ -191,6 +178,7 @@
 
         <!-- Experience Section -->
         <section id="experience">
+            <div class="parallax-blob blob-orange experience-blob" data-speed="0.08"></div>
             <div class="container">
                 <div class="brutalist-title-wrapper section-header">
                     <span class="brutalist-title-bg">EXPERIENCE</span>
@@ -231,6 +219,7 @@
 
         <!-- Contact Section -->
         <section id="contact">
+            <div class="parallax-blob blob-green contact-blob" data-speed="0.15"></div>
             <div class="container contact-wrapper">
                 <div class="contact-content">
                     <div class="brutalist-title-wrapper section-header text-left-brutalist">
@@ -295,13 +284,11 @@
         
         <!-- Thank You Section -->
         <section id="thank-you" class="thank-you-section">
+            <div class="parallax-blob blob-orange thank-you-blob" data-speed="-0.1"></div>
             <div class="brutalist-title-wrapper thank-you-header">
                 <span class="brutalist-title-bg">THANK YOU</span>
                 <span class="brutalist-title-fg">For Attention</span>
             </div>
-            
-            <!-- Ripped paper visual footer line -->
-            <div class="ripped-paper-line"></div>
         </section>
     </main>
 
